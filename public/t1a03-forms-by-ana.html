@@ -5,42 +5,50 @@
 <font style="color:DodgerBlue; align=left" > Proving I you can use Forms</font>
 <hr>
 <br>
-<ul> The following are all form elements: <br>
+<ul> <h3> Lets do a quiz by using forms:</h3> <br>
 <form>
-  <li> textbox  <br>
+  <li> Textbox  <br>
   <imput= document.getElementById('myText01").innerHTML = '' >  
 Enter Your First Name: <input type=text id="myText01" value=""> 
                                                             <input type="submit" value="Submit">
 <br><br>
  <li>  Checkboxes<br>
-check ur fave burger <br>
-Beef: <input type=checkbox><br>
-Veggy: <input type=checkbox> <br>
-Cheese: <input type=checkbox><br>
-Just the bread: <input type=checkbox> <br>
+<ol>Check ur fave burger <br>
+<li>Beef: <input type=checkbox><br>
+<li>Veggy: <input type=checkbox> <br>
+<li>Cheese: <input type=checkbox><br>
+<li>Just the bread: <input type=checkbox> <br> </ol>
 <br>                                                                                
 <li> Radio Buttons: <br>
- <input type=radio name="myRad01" value="">107.7<br>
- <input type=radio name="myRad01"value="">83.5<br> <br>
+<ol>Pick the class u are in<br>
+ <li><input type=radio name="myRad01" value="">10<br>
+<li> <input type=radio name="myRad01"value="">11<br> 
+ <li> <input type=radio name="myRad01"value="">12<br>
+ <li>  <input type=radio name="myRad01"value="">uh im a teacher<br><br> </ol>
 
-<li> hidden: <input type=hidden><br>
-<li> File: <input type=file><br>
-<li> reset: <input type =reset><br>
-<input type=submit><br>
-                                                            
-Textarea: <br>
-<textarea id="myArea01" cols=60 rows=5 > wow </textarea><br>
+<li> hidden(shhhhh) <input type=hidden><br> <br>
+<li> Enter your hw in a file: <input type=file><br> <br>
+
+<li>Ur Birthday:  
+   <input type="date" id="birthday" name="birthday">
+  <input type="submit" value="Submit">
+                                               
+<li> write sm about yourself: <br>
+<textarea id="myArea01" cols=60 rows=5 ></textarea><br> <br> 
+
 Button: <input type=button value="click for a hidden message" onclick="{
 document.getElementById('myArea01').value = 'Cool'
 }"><br>
-                                                 
-
- <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+<input type="button" onclick="alert('isnt this message even cooler')" value="another one"><br><br>
                                                   
-Select Box: <BR>
+<li> Select Box: <BR>
 <select id="mySelect01" size=2>
-<option value='myOne' >One
-(option value= 'myTwo' >Two
-<option value= 'myThree' >Three
-</select>
+<option value='myOne'>One
+<option value= 'myTwo'>Two
+<option value= 'myThree'>Three
+</select><br>
+<li> favourite colour: <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+<li> 
+<li>Didnt like the answers? reset: <input type =reset><br>
 </ form>
+                                
