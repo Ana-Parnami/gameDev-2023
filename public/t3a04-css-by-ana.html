@@ -10,8 +10,54 @@ Version 0.0.0</br>
  </style>
 </head>
 <body>
+ 
 Reference Link
 <a href="https://www.w3schools.com/cssref/default.asp">w3schools</a><br><hr>
+ <style>
+div {background-color: black;}
+div a {
+  text-decoration: none;
+  color: red;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #000;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #000; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+</style>
+</head>
+<body>
+
+<div>
+  <a href="#">Useless Link</a>
+  <ul>
+    <li>
+      <a href="#">Dropdown Link</a>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
  <style>
   h3{ font-family: "Lucida Console", "Courier New", monospace;
 }
