@@ -100,3 +100,54 @@ I do CSS inside the tag. It overpowers all other methods<br>
 Advanced see if you move this textarea
 </textarea><br>
 </body>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+div h {
+text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #000;}
+ul li:hover ul {display: block;}
+ul li ul {
+
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+</style>
+</head>
+<body>
+
+<div style="background-color:green">
+  <a style ="text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">Useless Link</a>
+  
+  <ul style= "display: inline;
+  margin: 0;
+  padding: 0;">
+    <li style=" display: inline-block ">
+      <h>Dropdown Link</h>
+      
+      <ul style= "position: absolute;
+  width: 200px;
+  display: none;" >
+        <li><h>Link 1</a></h>
+        <li><h>Link 2</a></h>
+        <li><h>Link 3</a></h>
+      </ul>
+    </li>
+  </ul>
+</div>
