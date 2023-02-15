@@ -11,8 +11,66 @@ Reference Link
 <a href="https://www.w3schools.com/cssref/default.asp">w3schools</a><br><hr>
  words can have hover 
  <style>
+div {background-color: black;}
 
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #000;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #000; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+  ul li ul li:hover {background: #666;}
+b { hover {background: #000;
+}
 </style>
+</head>
+<body>
+  ul li {display: inline-block;}
+
+
+<div>
+  <a style = "color: red;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">stuff you'll find:</a>
+  <ul>
+    <li>
+      <a  <a style = "color: red;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">hover</a>
+      <ul>
+        <li ><a style = "color: blue;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">shows lists</a></li>
+        <li><a style="color: green;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">could have many  things</a></li>
+        <li><a style ="color: red;
+         hover: background: blue;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">website shows different hovers</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+</div>
+
  <p style:hover "background-color: yellow;" > this is green</p>
  
  
