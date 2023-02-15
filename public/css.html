@@ -14,9 +14,9 @@ Reference Link
 
 
    
-<h3 style= "align=center"; >listing all css commands for my <b id="myB1" style="color :#00ff00; background-Color: blue;"> website </b> <input type=button value=Change onclick="{
+<h3 style= "align=center" >listing all css commands for my <b id="myB1" style="color :#00ff00; background-Color: blue;"> website </b> <input type=button value=Change onclick="{
                                          document.getElementById('myB1').style.color = 'red'
-                                         document.getElementById('myB1').style.backgroundColor = 'yellow' }" ></h3>
+                                         document.getElementById('myB1').style.backgroundColor = 'yellow' }" > </h3>
 
  <style>
 div {background-color: black;}
@@ -64,12 +64,18 @@ b { hover {background: #000;
   font-size: 20px;
   padding: 15px;
   display:inline-block;">shows lists</a></li>
-        <li><a href="#">could have many  things</a></li>
-        <li><a href="#">if hover changes color</a></li>
+        <li><a href="color: green;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">could have many  things</a></li>
+        <li><a href="color: red;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;">if hover changes color</a></li>
       </ul>
     </li>
   </ul>
-  <a>trying</a>
+  
 </div>
 
 Properly done with a.css file listing all css commands for my <b style= "color:#00ff00"> website </b>
@@ -100,54 +106,3 @@ I do CSS inside the tag. It overpowers all other methods<br>
 Advanced see if you move this textarea
 </textarea><br>
 </body>
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-
-div h {
-text-decoration: none;
-  color: white;
-  font-size: 20px;
-  padding: 15px;
-  display:inline-block;
-}
-ul li {display: inline-block;}
-ul li:hover {background: #000;}
-ul li:hover ul {display: block;}
-ul li ul {
-
-}
-ul li ul li { 
-  background: #555; 
-  display: block; 
-}
-ul li ul li a {display:block !important;} 
-ul li ul li:hover {background: #666;}
-</style>
-</head>
-<body>
-
-<div style="background-color:green">
-  <a style ="text-decoration: none;
-  color: white;
-  font-size: 20px;
-  padding: 15px;
-  display:inline-block;">Useless Link</a>
-  
-  <ul style= "display: inline;
-  margin: 0;
-  padding: 0;">
-    <li style=" display: inline-block ">
-      <h>Dropdown Link</h>
-      
-      <ul style= "position: absolute;
-  width: 200px;
-  display: none;" >
-        <li><h>Link 1</a></h>
-        <li><h>Link 2</a></h>
-        <li><h>Link 3</a></h>
-      </ul>
-    </li>
-  </ul>
-</div>
