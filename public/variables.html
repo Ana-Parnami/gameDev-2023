@@ -1,0 +1,27 @@
+version 0.0.1
+<h2 aligh=center>t3a06-variables-by-ana.html</h2>
+<a href="">you fix: good reference to variables in javascript adn other languages</a><br>
+other languages use: bool, int, float, char, straing, int_8, ont_6 etc 
+<br>
+note: java script does not use var and let for local variables<br>
+for global variables Mr. Elis prefers to use document.myVarName
+<br>
+<h4> example output code</h4>
+<pre>
+let myIn01 = document.getElementById('myText01').value
+document.getElementById('myDiv01').innerHTML = myIn01
+</pre>
+<h4> Example working code</<h4>
+  <input id="myText01" type=text value="the dog"><br>
+  <imput type=button value="show" onclick="{
+                                           let myIno1 = document.getElementById('myText01').value
+                                           document.getEmenentById('myDiv01').innerHTML = myIn01
+                                           }">
+    <br>
+    <input type=button value="using no variables" onclick="{
+                                                           document.getElementByID('mydiv01').innerHTML=
+                                                           document.getElementByID('mytext01').value
+                                                           }"> 
+    <br>
+    
+    <div id= "mydiv01">...</div>
