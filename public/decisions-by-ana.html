@@ -34,12 +34,30 @@ note: !=not, &&= AND ||= or
         <input type=button value="complex if" onClick="{
     let myIn01 = parseFloat(document.getElementById('myNum01').value)                                                                     
     if ((myIn01 !=3 || myIn01 > -3) && myIn01 <=100) {
-    document.getElementById('myDiv01').innerHTML = myIn01 + ' is a complex' } 
+    document.getElementById('myDiv01').innerHTML = myIn01 + ' is  complex' } 
     else { document.getElementById('myDiv01').innerHTML = myIn01 + ' is not complex'}
     }">
     
     
-
+my number is 16
                                                                               
     <div id="myDiv01">...</div>     
+    
+    <h4> Heres me trying a game</h4>
+    can u guess the number im thinking of?
+    <br> <h5> Guess a number in the box below</h5>   <input id="myNum02" type=number value="4"> <br>
+      <input type=button value="check to see" onClick="{
+                                                                               let myIn01 = parseFloat(document.getElementById('myNum02').value)
+                                                                               if ( myIn01 < 16){
+                                                                               document.getElementById('myDiv05').innerHTML = myIn01 + ' is smaller than my number'
+                                                                               } 
+                                                                               if else (myIn01 == 16){
+                                                                               document.getElementById('myDiv05').innerHTML = myIn01 + ' is MY NUMBER!!!'
+                                                                               }
       
+                                                                               else {
+                                                                                  document.getElementById('myDiv05').innerHTML = myIn01 + ' is greater than my number'
+                                                                               } 
+                                                                               }">
+                                                                                                                        
+    <div id="myDiv05">...</div>     
