@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+version 0.0.1
+<h2 align=center>t3a07-decisions-by-ana.html</h2>
+<a href="https://www.w3schools.com">Good reference for if else statements</a><br>
+note: !=not, &&= AND ||= or
+
+<h4>example input output code>/4>
+  <pre>
+  let myHour= 20
+  if (myHour < 18)  {
+  let myGreating= 'good day';
+  }
+  </pre>
+  
+  <h4>Example of wroking code</h4>
+  <input id="myNum01" type=number value="0002"> <br>
+  <input type=button value="simple if statements for decision making" onClick="{
+                                                                               let myIn01 = parseFloat(document.getElementById('myNum01').value)
+                                                                               if (myIn01 >= 3){
+                                                                               document.getElementById('myDiv02').innerHTML = myIn01 + ' is greater than 3'
+                                                                               }
+                                                                               }"> <br>
+                                                                               
+                                                                                 <div id="myDiv02">...</div>   
+   <input type=button value="if else statements" onClick="{
+    let myIn01 = parseFloat(document.getElementById('myNum01').value)
+                                                                               if (myIn01 >= 3){
+                                                                               document.getElementById('myDiv03').innerHTML = myIn01 + ' is greater than 3'
+                                                                               } else {
+                                                                               document.getElementById('myDiv03').innerHTML = myIn01 + ' is smaller than 3'
+                                                                               } }">  
+                                                                               <br>
+                                                                               <div id="myDiv03">...</div>  
+        <input type=button value="complex if" onClick="{
+    let myIn01 = parseFloat(document.getElementById('myNum01').value)                                                                     
+    if ((myIn01 !=3 || myIn01 > -3) && myIn01 <=100) {
+    document.getElementById('myDiv01').innerHTML = myIn01 + ' is a complex' } 
+    else { document.getElementById('myDiv01').innerHTML = myIn01 + ' is not complex'}
+    }">
+    
+    
+
+                                                                              
+    <div id="myDiv01">...</div>     
+      
