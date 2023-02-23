@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <body>
 
@@ -5,10 +6,6 @@ version 0.0.1
 
 <h2 align=center> t3a05-input-output-by-ana</h2>
   <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Good reference to input putput Javascript innerHTML by w3schools </a>
-
-<h3> input/output code</h3>
-<pre>
-let myIn01= document.getElementById('myNu,01').value
 
 
 
@@ -24,18 +21,35 @@ let myIn01 = document.getElementById('myNum01').value document.getElementById('m
 
 <input id="myNum1" type=number value="4" ><br>
 
-<input type=button value="myEvent squares" onclick="{ 
+<input type=button value="square " onclick="{ 
                                                     let myIn01= parseFloat(document.getElementById('myNum1').value) 
                                                     let myAnswer = myIn01 * myIn01
-                                                    document.getElementById('myDiv01').innerHTML = myIn01+ squared = ' + myAnswer 
-                                                    }">
+                                                    document.getElementById('myDiv01').innerHTML = myIn01 + ' squared is ' + myAnswer 
+                                                    }" >
 
-<br>
+
+<input type=button value="square root" onclick="{ 
+                                                    let myIn01= parseFloat(document.getElementById('myNum1').value) 
+                                                    let myAnswer = Math.sqrt(myIn01);
+                                                    document.getElementById('myDiv01').innerHTML = myIn01 + ' squared is ' + myAnswer 
+                                                    }" >
+
 
 <div id="myDiv01">...</div> 
- <input type="button" onclick="alert(5 + 6)" value="add 5 and 6"><br><br>
 
+<h4> More complex codes</h4>
+write two numbers 
+<br> 
+<input id="myNum2" type=number value="4" > <input id="myNum3" type=number value="4" >
+<br>
+ <input type="button" value="ADD THESE NUMBERS" onclick="{
+ let myIn03= parseFloat(document.getElementById('myNum2').value) 
+  let myIn02= parseFloat(document.getElementById('myNum3').value) 
+                                                    let myAnswer = myIn02 + myIn03
+                                                    alert(myAnswer)
+                                                    }" >
 
+ 
 
 </body>
 </html>
