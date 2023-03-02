@@ -6,9 +6,8 @@
 </head>
 <body>
 	<h2 align="center">t1a08-loops-by-Ana.html</h2>
-	<a href="#">Good reference to Javascript Loops</a><br>
-	<h4>Example input output code</h4>
-	<pre></pre>
+	<a href="https://www.w3schools.com/js/js_loop_for.asp">Good reference to Javascript Loops</a><br>
+
 	<h4>Example working code</h4>
 	Max loops: <input id="myNum01" type="number" value="4"><br> 
 	<input type="button" value="Basic For loop with Decisions" onclick="{
@@ -27,5 +26,43 @@
 	
 	}">
 	<div id="myDiv1">...</div>
+	<br><br>
+	
+PrimeTime: <input id="myNum02" type="number" value="100"><br> 
+	<input type="button" value="how many prime numbers does it have" onclick="{	
+	
+	let myCount= 0;
+	let myMax=  parseInt(document.getElementById('myNum02').value);
+	 function isPrime(num) {
+    if (num <= 1) {
+      return false
+      
+    }
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  for (let i = 2; i <= myMax; i++) {
+    if (isPrime(i)) {
+      myCount++;
+    }
+  }
+
+  document.getElementById('myDiv2').innerHTML = 'There are ' + myCount + ' prime numbers between 2 and ' + myMax;
+
+
+}">
+<div id="myDiv2">...</div>
+	
+
+
+    
+
 </body>
 </html>
