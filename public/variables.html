@@ -1,7 +1,31 @@
 
-version 0.0.1
-<h2 align=center>t3a06-variables-by-ana.html</h2>
-<a href="">you fix: good reference to variables in javascript adn other languages</a><br>
+<html>
+
+<style>
+h3 {
+   font-family: 'Open Sans', sans-serif;
+   border: 2px solid #cfc;
+   font-size: 24px;
+   color: #333;
+   text-align: center;
+   text-transform: uppercase;
+   padding: 10px;
+}
+body {
+background: linear-gradient(to bottom, pink , red)
+}
+
+</style>
+
+<body>
+
+<h3 align=center>t3a06-Variables-By-Ana</h3>
+
+
+<a href="https://www.w3schools.com/js/js_variables.asp">you fix: good reference to variables in javascript and other languages</a><br>
+<br> 
+
+
 other languages use: bool, int, float, char, straing, int_8, ont_6 etc 
 <br>
 note: java script does not use var and let for local variables<br>
@@ -13,17 +37,33 @@ for global variables Mr. Elis prefers to use document.myVarName
 let myIn01 = document.getElementById('myText01').value
 document.getElementById('mydiv01').innerHTML = myIn01
 </pre>
-<h4> Example working code</<h4>
-  <input id="myText01" type=text value="the cat"><br>
-  <input type=button value="show" onclick="{
-                                           let myIn01 = document.getElementById('myText01').value
-                                           document.getElementById('mydiv01').innerHTML = myIn01
+<h4> Example working code</h4>
+  <input id="myText01" type="text" value="the cat"><br>
+  <input type="button" value="show" onclick="{
+                                           let myIn01 = document.getElementById('myText01').value;
+                                           document.getElementById('mydiv01').innerHTML = myIn01;
                                            }">
     <br>
-    <input type=button value="using no variables" onclick="{
+    <input type="button" value="using no variables" onclick="{
                                                            document.getElementById('mydiv01').innerHTML =
-                                                           document.getElementById('mytext01').value
-                                                           }"> 
+                                                           document.getElementById('mytext01').value;
+ij}"> 
     <br>
     
-    <div id= "mydiv01">...</div>
+    <div id="mydiv01">...</div>
+    
+ <h4> example some of my code</h4>
+ 
+ <p id="demo"></p>
+
+<script>
+x = 5;
+y = 6;
+z = x + y;
+document.getElementById("demo").innerHTML =
+"The value of z is: " + z +"(this would make more sense in the code";
+</script>
+
+
+</body>
+</html>
