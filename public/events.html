@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+
 <html>
 <body>
 
 <b id="myB01" onMouseOut="{
-document.getElementById('myB01').innerHTML ='this is cool' }"
+document.getElementById('myB01').innerHTML ='this is cool' 
+this.style.color = 'red'
+}"
 
 onMouseOver="{ 
-document.getElementById('myB01').innerHTML=  }" > This is bold</b> <br>
+this.style.color = 'blue' 
+document.getElementById('myB01').innerHTML ='this is blue and bold' 
+}" > This is bold</b> <br>
 
 <input type=text id="myText01" value="3"><br>
 
@@ -14,5 +19,9 @@ document.getElementById('myB01').innerHTML=  }" > This is bold</b> <br>
 document.getElementById('myDiv1').innerHTML = document.getElementById('myText01').value }">
 |<div id="myDiv1">...</div>
 
+
+	
+
 </body>
 </html>
+
