@@ -1,11 +1,21 @@
 
 
+
 <html>
 <style>
-  body{ background: linear-gradient(to bottom, #ffccff, #ff66cc ); }
+  body{ background: linear-gradient(to bottom, #ffccff, #ff66cc );
+  }
+  
+		h1 {
+			font-size: 50px;
+			text-align: center;
+			color: #ccc;
+			text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px #00ffff, 0 0 100px #00ffff, 0 0 120px #00ffff, 0 0 140px #00ffff;
+		}
+	
 </style>
 <body>
-	<h2 align="center">t1a08-loops-by-Ana.html</h2>
+	<h1 align="center">t1a08-loops-by-Ana.html</h1>
 	<a href="https://www.w3schools.com/js/js_loop_for.asp">Good reference to Javascript Loops</a><br>
 
 	<h4>Example working code</h4>
@@ -59,8 +69,28 @@ PrimeTime: <input id="myNum02" type="number" value="100"><br>
 
 }">
 <div id="myDiv2">...</div>
+<br><br>
+
+	
+every other num <input id="myNum03" type="number" value="10"><br> 
+	<input type="button" value="every other number is a suprise" onclick="{	
+    document.getElementById('myDiv3').innerHTML = '';
+		let myTemp = '';
+		let myMax = parseInt(document.getElementById('myNum03').value);
+        
+  for (let i = 1; i <= myMax; i++) {
+    if (i % 2 === 0) {
+      myTemp += '<span style=color:red>' + i + '</span> '+ '<br>';
+    } else {
+      myTemp += i + ' '+ '<br>';
+    }
+    
+}
+  document.getElementById('myDiv3').innerHTML = myTemp;
+    }">
 	
 
+<div id="myDiv3">...</div>
 
     
 
