@@ -4,7 +4,14 @@
   <title>My Page</title>
 </head>
 <body>
-
+<style>
+  .droptarget {
+  width: 100px; 
+  height: 35px;
+  padding: 10px;
+  border: 1px solid black;
+}
+</style>
   <script>
     function myExampleFunction() {
       let myIn01 = parseInt(document.getElementById('myText01').value);
@@ -12,7 +19,25 @@
       let myReply = myIn01 + ++myIn01 + mySum;
       return myReply;
     }
+    
+    function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+  document.getElementById("demo").innerHTML = "Started to drag the text";
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+  document.getElementById("demo").innerHTML = "The text was dropped";
+}
   </script>
+  
+ 
 
   <h2 align="center">t1a09-functions-by-Fred.html</h2>
   <a href="https://www.w3schools.com/js/js_functions.asp">
@@ -33,6 +58,17 @@
   <input type="text" id="myText01" value="3"><br>
   <input type="button" value="Function Example" onclick="document.getElementById('myDiv01').innerHTML = myExampleFunction()">
   <div id="myDiv01">...</div>
+  
+  <h4> Drop and drag function</h4>
+  
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" draggable="true" id="dragtarget">Drag me!</p>
+</div>
+<br>
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
+<p id="demo"></p>
+
+<h4> function</h4>
 </body>
 </html>
