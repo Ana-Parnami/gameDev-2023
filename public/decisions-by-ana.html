@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 version 0.0.1
-<h2 align=center>t3a07-decisions-by-ana.html</h2>
+<style>
+h1 {
+  font-size: 50px;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  animation: glow 2s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #C0C0C0, 0 0 70px #C0C0C0, 0 0 80px #C0C0C0, 0 0 100px #C0C0C0, 0 0 150px #C0C0C0;
+    color: #000;
+  }
+  50% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #C0C0C0, 0 0 70px #C0C0C0, 0 0 80px #C0C0C0, 0 0 100px #C0C0C0, 0 0 150px #C0C0C0, 0 0 200px #C0C0C0;
+    color: #C0C0C0;
+  }
+  100% {
+    text-shadow: 0 0 30px #fff, 0 0 40px #C0C0C0, 0 0 70px #C0C0C0, 0 0 80px #C0C0C0, 0 0 100px #C0C0C0, 0 0 150px #C0C0C0, 0 0 200px #C0C0C0, 0 0 250px #C0C0C0;
+    color: #000;
+  }
+}
+
+</style>
+<body style =  " background-color: pink">
+
+<h1 align=center>t3a07-decisions-by-ana.html</h1>
 <a href="https://www.w3schools.com">Good reference for if else statements</a><br>
 note: !=not, &&= AND ||= or
 
@@ -12,7 +39,7 @@ note: !=not, &&= AND ||= or
   }
   </pre>
   
-  <h4>Example of wroking code</h4>
+  <h4>Example of working code</h4>
   <input id="myNum01" type=number value="4"> <br>
   <input type=button value="simple if statements for decision making" onClick="{
                                                                                let myIn01 = parseFloat(document.getElementById('myNum01').value)
@@ -45,7 +72,7 @@ note: !=not, &&= AND ||= or
     
     <h4> Heres me trying a game</h4>
     can u guess the number im thinking of? (hint its under 100)
-    <br> <h5> Guess a number in the box below</h5>   <input id="myNum02" type=number value="100"> <br>
+    <br>  <input id="myNum02" type=number value= "100"><br>
       <input type=button value="check to see" onClick="{
                                                                                let myIn01 = parseFloat(document.getElementById('myNum02').value)
                                                                                if ( myIn01 < 16){
@@ -62,10 +89,27 @@ note: !=not, &&= AND ||= or
                                                                                                                         
     <div id="myDiv05">...</div>     
     <h4> lets do a complex number </h4>
-     <input id="myNum03" type=number value="100"> <br>
-     
-      <input type=button value="" onClick="{
-    let myIn01 = parseFloat(document.getElementById('myNum03').value)
-     
-     https://www.w3schools.com/jsref/event_ondrop.asp
-     
+<input id="myNum03" type="number" value="100"> <br>
+
+<input type="button" value="prime or not?" onClick="{
+  let myIn02 = parseFloat(document.getElementById('myNum03').value)
+  let isPrime = true;
+  if (myIn02 <= 1) {
+    isPrime = false;
+  } else {
+    for (let i = 2; i <= Math.sqrt(myIn02); i++) {
+      if (myIn02 % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
+
+  if (isPrime) {
+    document.getElementById('myDiv06').innerHTML = myIn02 + ' is a prime number';
+  } else {
+    document.getElementById('myDiv06').innerHTML = myIn02 + ' is not a prime number';
+  }
+}">
+<div id="myDiv06">...</div>
+ </body style= >
