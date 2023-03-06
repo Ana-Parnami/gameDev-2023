@@ -1,0 +1,40 @@
+Version 0.0.1
+
+<h2 align=center>t2a02-objects-by-Ana.html</h2>
+
+<a href="">Good reference to Javascript Objects</a><br>
+
+Objects are stored named variables
+
+<h4> Example Objects code</h4>
+<pre> let myPerson {
+"firstName": "John",
+"lastName": "Doe",
+"age": 50,
+"eyeColor": "blue"
+}
+</pre>
+
+<h4> Example working Objects code</h4>
+<style>
+  p{
+    color: red;
+  }
+</style>
+
+Nothing: <input type=text id="myText01" value="Useless at the moment"><br>
+<input type=button value="Example Object Set and Show" onclick="{
+let myPerson = {
+'firstName': 'John',
+'lastName' : 'Doe',
+'age': 50, 
+'eyeColor': 'brown'
+}
+document.getElementById('myDiv1').innerHTML = '<p>myPerson Object has properties:<p>';
+document.getElementById('myDiv1').innerHTML += 'firstName:' + myPerson.firstName + '<br>'
+document.getElementById('myDiv1').innerHTML += 'lastName:' + myPerson.lastName + '<br>'
+document.getElementById('myDiv1').innerHTML += 'age:' + myPerson.age + '<br>'
+document.getElementById('myDiv1').innerHTML += 'eyeColor:' + myPerson.eyeColor + '<br>'
+}">
+<div id="myDiv1">...</div>
+<br>
