@@ -38,19 +38,19 @@ let myIn01 = document.getElementById('myText01').value
 document.getElementById('mydiv01').innerHTML = myIn01
 </pre>
 <h4> Example working code</h4>
-  <input id="myText01" type="text" value="the cat"><br>
-  <input type="button" value="show" onclick="{
-                                           let myIn01 = document.getElementById('myText01').value;
-                                           document.getElementById('mydiv01').innerHTML = myIn01;
-                                           }">
-    <br>
-    <input type="button" value="using no variables" onclick="{
-                                                           document.getElementById('mydiv01').innerHTML =
-                                                           document.getElementById('mytext01').value;
-ij}"> 
-    <br>
-    
-    <div id="mydiv01">...</div>
+  
+<input id="myText01" type="text" value="the cat"><br>
+<input type="button" value="show" onclick="{
+    let myIn01 = document.getElementById('myText01').value;
+    document.getElementById('mydiv01').innerHTML = myIn01;
+}">
+<br>
+<input type="button" value="using no variables" onclick="{
+    document.getElementById('mydiv01').innerHTML = document.getElementById('myText01').value;
+}">
+<br>
+
+<div id="mydiv01">...</div>
     
  <h4> example some of my code</h4>
  
