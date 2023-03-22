@@ -37,6 +37,34 @@ function drop(event) {
 }
   </script>
   
+<script>
+  var digits = [];
+  var operators = [];
+  
+  function addDigit(digit) {
+    if (digits.length === 0 || operators[operators.length - 1] === '+') {
+      digits.push(digit);
+    } else {
+      digits[digits.length - 1] = digits[digits.length - 1] * 10 + digit;
+    }
+    document.getElementById('result').innerHTML = digits.join(' ');
+  }
+  
+  function addOperator(operator) {
+    operators.push(operator);
+    document.getElementById('result').innerHTML += ' ' + operator + ' ';
+  }
+  
+  function calculate() {
+    var sum = digits.reduce(function(total, digit) {
+      return total + digit;
+    }, 0);
+    document.getElementById('result').innerHTML = sum;
+    digits = [sum];
+    operators = [];
+  }
+</script>
+  
  
 
   <h2 align="center">t1a09-functions-by-ana.html</h2>
@@ -69,18 +97,17 @@ function drop(event) {
 
 <p id="demo"></p>
 
-<h4> function</h4>
-  <h4> function</h4>
-<input type= "button" id= "button1" value= "1"  onclick="{
-                                                      document.getElementById('myDiv01').innerHTML = '1'}">
-<input type= "button" id= "button2" value= "2">
-<input type= "button" id= "button3" value= "3"><br>
-<input type= "button" id= "button1" value= "4">
-<input type= "button" id= "button2" value= "5">
-<input type= "button" id= "button3" value= "6"><br>
-<input type= "button" id= "button1" value= "7">
-<input type= "button" id= "button2" value= "8">
-<input type= "button" id= "button3" value= "9"><br>
-<div id="myDiv01">...</div>
-</body>
-</html>
+<h4> function: calculator</h4>
+  <input type="button" value="1" onclick="addDigit(1)">
+<input type="button" value="2" onclick="addDigit(2)">
+<input type="button" value="3" onclick="addDigit(3)"><br>
+<input type="button" value="4" onclick="addDigit(4)">
+<input type="button" value="5" onclick="addDigit(5)">
+<input type="button" value="6" onclick="addDigit(6)"><br>
+<input type="button" value="7" onclick="addDigit(7)">
+<input type="button" value="8" onclick="addDigit(8)">
+<input type="button" value="9" onclick="addDigit(9)"><br>
+<input type="button" value="+" onclick="addOperator('+')">
+<input type="button" value="=" onclick="calculate()"><br>
+<div id="result">...</div>
+  
