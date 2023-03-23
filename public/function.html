@@ -55,19 +55,19 @@ function drop(event) {
     } else {
       digits[digits.length - 1] = digits[digits.length - 1] * 10 + digit;
     }
-    document.getElementById('result').innerHTML = digits.join(' ');
+    document.getElementById('Div3').innerHTML = digits.join(' ');
   }
   
   function addOperator(operator) {
     operators.push(operator);
-    document.getElementById('result').innerHTML += ' ' + operator + ' ';
+    document.getElementById('Div3').innerHTML += ' ' + operator + ' ';
   }
   
   function calculate() {
     var sum = digits.reduce(function(total, digit) {
       return total + digit;
     }, 0);
-    document.getElementById('result').innerHTML = sum;
+    document.getElementById('Div3').innerHTML = sum;
     digits = [sum];
     operators = [];
   }
@@ -117,5 +117,7 @@ function drop(event) {
 <input type="button" value="9" onclick="addDigit(9)"><br>
 <input type="button" value="+" onclick="addOperator('+')">
 <input type="button" value="=" onclick="calculate()"><br>
-<div id="result">...</div>
+	<div id="Div3">...</div><br>
+	<p> this is a code i made to add numbers. 
+	
   
