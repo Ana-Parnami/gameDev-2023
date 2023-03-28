@@ -30,6 +30,20 @@ document.getElementById('myB01').innerHTML ='this is blue and bold'
 <input type=button value="Example onClick" onclick="{
 document.getElementById('myDiv1').innerHTML = document.getElementById('myText01').value }">
 |<div id="myDiv1">...</div>
+ 
+	<h3> On seek event</h3> 
+	<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML +=  "Seek operation began! ";
+}
+</script>
+<video controls onseeking="myFunction()">
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+<p id="demo"></p>
+
 
 
 	
