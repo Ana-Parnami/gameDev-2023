@@ -5,6 +5,10 @@
     background-color: pink;
     
   }
+  h4{
+    color: green;
+    background-color: ;
+  }
 </style>
 <h2 id="myTitle" onMouseOver="{
 document.getElementById('myTitle').innerHTML ='t3a10'}" 
@@ -13,6 +17,8 @@ document.getElementById('myTitle').innerHTML ='events-by-ana'}"> events-by-ana</
 
 <html>
 <body>
+  
+<h4> onMouseout and onMouseOver events</h4>
 
 <b id="myB01" onMouseOut="{
 document.getElementById('myB01').innerHTML ='this is cool' 
@@ -31,18 +37,29 @@ document.getElementById('myB01').innerHTML ='this is blue and bold'
 document.getElementById('myDiv1').innerHTML = document.getElementById('myText01').value }">
 |<div id="myDiv1">...</div>
  
-	<h3> On seek event</h3> 
-	<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML +=  "Seek operation began! ";
+
+	
+<h4>The OncopyEvents</h4>
+
+<input type="text" oncopy="myFunction1()" value="Try to copy me"> <br>
+
+
+<p id="demo"></p>
+
+<h4> Focus events</h4>
+Enter your name: <input type="text" id="fname" onfocusout="myFunction2()">
+<p id="demo2"></p>
+<script>
+function myFunction1() {
+  document.getElementById("demo").innerHTML = "You copied text!"
+}
+
+function myFunction2() {
+  let x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+  document.getElementById("demo2").innerHTML = "Your leters changed to Uppercase. this was an onFocusOut event"
 }
 </script>
-<video controls onseeking="myFunction()">
-  <source src="mov_bbb.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML5 video.
-</video>
-<p id="demo"></p>
 
 
 
