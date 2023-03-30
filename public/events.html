@@ -62,6 +62,18 @@ function myFunction2() {
 </script>
 
 
+<div id="myDIV" style="border:1px solid black">
+<p>Roll the mouse wheel over me!</p>
+</div>
+
+<script>
+document.getElementById("myDIV").addEventListener("wheel", myFunction);
+
+function myFunction() {
+  this.style.fontSize = "35px";
+}
+</script>
+
 
 	
 
