@@ -2,50 +2,63 @@
 <html>
   <head>
     
-    </head>
-    <body>
-     <h1 align= center> Taxes</h1>
+  </head>
+  <body>
+    <h1 align=center>Taxes</h1>
     <script>
-    function calculateIncome() {
-   var hours = parseFloat(document.getElementById("hours").value);
-			var income = parseFloat(document.getElementById("income").value);
-			
-
-			var money = hours * income;
-		
-			document.getElementById("result").innerHTML = money;
-			var tax = parseFloat(document.getElementById("tax").value);
-			var percent = tax/100; 
-			var result = money * percent ;
-			document.getElementById("result2").innerHTML = result;
-			var net = money - result ;
-		document.getElementById("result3").innerHTML = net;	
-		
-		}
+      function calculateIncome() {
+        var hours = parseFloat(document.getElementById("hours").value);
+        var income = parseFloat(document.getElementById("income").value);
+        var money = hours * income;
+        document.getElementById("result").innerHTML = money;
+        var tax = parseFloat(document.getElementById("tax").value);
+        var percent = tax / 100;
+        var result = money * percent;
+        document.getElementById("result2").innerHTML = result;
+        var net = money - result;
+        document.getElementById("result3").innerHTML = net;
+   
+        var days = parseFloat(document.getElementById("days").value);
+        var years = parseFloat(document.getElementById("years").value);
+        var resultDays = days * net;
+        document.getElementById("result4").innerHTML = resultDays;
+        var resultMonths = years * net;
+        document.getElementById("result5").innerHTML = resultMonths;
+      }
     </script>
-    
-    
-     Enter hours worked:
-	<input type="number" id="hours" name="hours" value = "8"><br>
-	
-Enter hourly income:
-	<input type="number" id="income" name="income" value = "15"><br>
-tax rate :
-<input type = "number" id = "tax" name = "tax" value = "30"><br><br>
-	
-	<button onclick="calculateIncome()">Calculate Income</button><br><br>
-	
-Total Income:
-	<span id="result"></span><br>
-	Amount of money deducted:
-		<span id="result2"></span><br>
-	Net income:
-		<span id="result3"></span><br><br><hr><br>
-		
-	Working days in a month:
-	<input type="number" id="days" name="days" value = "20"><br>
-	
-Work days in years:
-	<input type="number" id="years " name="years" value = "240"><br>
-    </body>
+
+    Enter hours worked:
+    <input type="number" id="hours" name="hours" value="8"><br>
+
+    Enter hourly income:
+    <input type="number" id="income" name="income" value="15"><br>
+
+    Tax rate:
+    <input type="number" id="tax" name="tax" value="30"><br><br>
+
+<br><br>
+
+    Total Income:
+    <span id="result"></span><br>
+    Amount of money deducted:
+    <span id="result2"></span><br>
+    Net income:
+    <span id="result3"></span><br><br>
+    <hr><br>
+
+    Working days in a month:
+    <input type="number" id="days" name="days" value="20"><br>
+
+    Work days in a year:
+    <input type="number" id="years" name="years" value="240"><br><br><br>
+
+  
+
+    Monthly salary:
+    <span id="result4"></span><br>
+    yearly salary:
+     <span id="result5"></span>
+     
+     <h3> Calculate</h3>     <button onclick="calculateIncome()">Calculate Income</button>
+  </body>
 </html>
