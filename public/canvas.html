@@ -48,7 +48,50 @@ You use loops and variables to make fast fancy drawings <br><br>
    myContext.fillRect(100, 300, 200, 400);
    // reset fillstyle
    myContext.fillStyle = 'black';
-}"><br><br>
+}">
+<input type=button value="house" onclick="{
+   myContext.beginPath();
+   myContext.lineWidth = 5;
+   myContext.strokeStyle = 'red';
+   myContext.arc(400, 200, 40, 0, 2 * Math.PI);
+   myContext.stroke();
+   
+    myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(400,50);
+   myContext.lineTo(100,300);
+   myContext.stroke();
+   
+    myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(400,50);
+   myContext.lineTo(700,300);
+   myContext.stroke();
+   
+   myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(100,300);
+   myContext.lineTo(700,300);
+   myContext.stroke();
+   
+      myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(100,300);
+   myContext.lineTo(100,600);
+   myContext.stroke();
+    myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(700,300);
+   myContext.lineTo(700,600);
+   myContext.stroke();
+   
+      myContext.beginPath();
+   myContext.moveTo(600,100);
+   myContext.quadraticCurveTo(600,600,200,600);
+   myContext.stroke();
+}">
+
+<br><br>
 
 <input type=button value="clearRect(20, 20, 50, 50)" onclick="{
    myContext.clearRect(20, 20, 50, 50);
