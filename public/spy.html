@@ -68,8 +68,28 @@
    myString = document.getElementById('myArea01').value.toLowerCase().split('')
    for (let myLoop=0;   myLoop < myString.length; myLoop++){
       myTemp = myString[myLoop]
+      if (myString[myLoop] == 'f') {myTemp  = 'e'} 
+      if (myString[myLoop] == 'i') {myTemp  = 'h'} 
       if (myString[myLoop] == 'e') {myTemp  = 'f'} 
       if (myString[myLoop] == 'h') {myTemp  = 'i'} 
+      
+       if (myString[myLoop] == 'a') {myTemp  = '2'} 
+      if (myString[myLoop] == 'b') {myTemp  = '*'} 
+       if (myString[myLoop] == 'c') {myTemp  = '6'} 
+      if (myString[myLoop] == 'd') {myTemp  = '0'} 
+      
+      
+        if (myString[myLoop] == '2') {myTemp  = 'j'} 
+      if (myString[myLoop] == '*') {myTemp  = 'u'} 
+       if (myString[myLoop] == '6') {myTemp  = 'm'} 
+      if (myString[myLoop] == '0') {myTemp  = 'p'} 
+      
+             if (myString[myLoop] == 'j') {myTemp  = '3'} 
+      if (myString[myLoop] == 'u') {myTemp  = 'k'} 
+       if (myString[myLoop] == 'm') {myTemp  = '#'} 
+      if (myString[myLoop] == 'p') {myTemp  = '{'} 
+      if (myString[myLoop] == 'k') {myTemp  = '^'} 
+                                            
       myString[myLoop] = myTemp
    }
    document.getElementById('myArea02').value = myString.join('')
@@ -84,8 +104,27 @@
    myString = document.getElementById('myArea02').value.toLowerCase().split('')
    for (let myLoop=0;   myLoop < myString.length; myLoop++){
       myTemp = myString[myLoop]
-      if (myString[myLoop] == 'f') {myTemp  = 'e'} 
+if (myString[myLoop] == 'f') {myTemp  = 'e'} 
       if (myString[myLoop] == 'i') {myTemp  = 'h'} 
+       if (myString[myLoop] == 'e') {myTemp  = 'f'} 
+      if (myString[myLoop] == 'h') {myTemp  = 'i'} 
+      
+        if (myString[myLoop] == '2') {myTemp  = 'a'} 
+      if (myString[myLoop] == '*') {myTemp  = 'b'} 
+       if (myString[myLoop] == '6') {myTemp  = 'c'} 
+      if (myString[myLoop] == '0') {myTemp  = 'd'} 
+      
+           if (myString[myLoop] == 'j') {myTemp  = '2'} 
+      if (myString[myLoop] == 'u') {myTemp  = '*'} 
+       if (myString[myLoop] == 'm') {myTemp  = '6'} 
+      if (myString[myLoop] == 'p') {myTemp  = '0'} 
+       
+                    if (myString[myLoop] == '3') {myTemp  = 'j'} 
+      if (myString[myLoop] == 'k') {myTemp  = 'u'} 
+       if (myString[myLoop] == '#') {myTemp  = 'm'} 
+      if (myString[myLoop] == '{') {myTemp  = 'p'} 
+      if (myString[myLoop] == '^') {myTemp  = 'k'} 
+                
       myString[myLoop] = myTemp
    }
    document.getElementById('myArea03').value = myString.join('')
