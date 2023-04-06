@@ -76,11 +76,12 @@ function myFunction() {
 
 	<h4> On touch events </h4>
 <p ontouchmove="myFunction(event)">Touch this</p>
+	<p id="demo1"></p>
 <script>
 function myFunction(event) {
   var x = event.touches[0].clientX;
   var y = event.touches[0].clientY;
-  document.getElementById("demo").innerHTML = x + ", " + y;
+  document.getElementById("demo1").innerHTML = x + ", " + y;
 }
 </script>
 	
