@@ -37,5 +37,35 @@ myArray[1] = 'Mary'
   }">
 
   <div id="myDiv1">...</div>
+  
+  <h4>Array Example 2</h4>
+  
+  <p>Enter some words and click the button to add them to the array:</p>
+  
+  <input type="text" id="myInput1" value = "words">
+  <button onclick="addWord()">Add Word</button>
+  
+  <p>Current array:</p>
+  
+  <ul id="myList">
+  </ul>
+  
+  <script>
+    
+    let myArray = [];
+
+    function addWord() {
+      let word = document.getElementById("myInput1").value;
+      myArray.push(word);
+      document.getElementById("myInput1").value = "";
+      let list = document.getElementById("myList");
+      list.innerHTML = "";
+      for (let i = 0; i < myArray.length; i++) {
+        let item = document.createElement("li");
+        item.appendChild(document.createTextNode(myArray[i]));
+        list.appendChild(item);
+      }
+    }
+  </script>
 </body>
 </html>
