@@ -3,8 +3,7 @@
 <h1 align=center>t2a12 Sort by Ana</h1>
 
 <script>
-   let myMax = 3     // 52 when working //for (let  myCards[myLoop+1] = myLoop; myCards[myLoop+1] < myMax ; myCards[myLoop+1]++) {
-    // document.getElementById('myDiv01').innerHTML = myTemp
+   let myMax = 52    
    let myCards = new Array(myMax)  
 </script>
 
@@ -12,43 +11,39 @@
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      myCards[myLoop] = Math.floor(Math.random()*10)
   }
+   let myTemp = ''
     for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      myTemp += myLoop + ' = '+ myCards[myLoop] + '<br>'
   }
    document.getElementById('myDiv01').innerHTML = myTemp
   }"
+  
 
 >
 
-<input type=button value="Show" onclick="{
+
+<input type=button value="Sort" onclick="{
+  let isSorted = false;
+  while (!isSorted) {
+    isSorted = true;
+    for (let myLoop = 0; myLoop < myMax - 1; myLoop++) {
+      if (myCards[myLoop] > myCards[myLoop + 1]) {
+        let myTemp = myCards[myLoop];
+        myCards[myLoop] = myCards[myLoop + 1];
+        myCards[myLoop + 1] = myTemp;
+        isSorted = false;
+      }
+    }
+  }
   let myTemp = ''
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      myTemp += myLoop + ' = '+ myCards[myLoop] + '<br>'
   }
    document.getElementById('myDiv01').innerHTML = myTemp
+  
 }">
-
-<input type=button value="Sort" onclick="{
-  let myTemp = 0
-
-
-  for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
-
- 
- 
-     if (myCards[myLoop] > myCards[myLoop+1]){
-   
-     myTemp = myCards[myLoop]; 
-     myCards[myLoop] = myCards[myLoop+1];
-     myCards[myLoop+1] = myTemp;
-     
-     }
-    
-     }
-}">
-
 <div id="myDiv01"></div>
-<div id= "myDiv02"> </div>
+
 
   
 
