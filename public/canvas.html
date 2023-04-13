@@ -48,7 +48,7 @@ You use loops and variables to make fast fancy drawings <br><br>
    myContext.fillRect(100, 300, 200, 400);
    // reset fillstyle
    myContext.fillStyle = 'black';
-}">
+}"><br>
 <input type=button value="house" onclick="{
    myContext.beginPath();
    myContext.lineWidth = 5;
@@ -92,6 +92,52 @@ You use loops and variables to make fast fancy drawings <br><br>
    
 }">
 
+
+<input type=button value="tree" onclick="{
+   myContext.beginPath();
+   myContext.lineWidth = 10;
+   myContext.strokeStyle = 'brown';
+   myContext.lineWidth = 1;   
+   myContext.moveTo(800,600);
+   myContext.lineTo(800,300);
+   myContext.stroke();
+      myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(850,600);
+   myContext.lineTo(850,300);
+   myContext.stroke();
+   
+      myContext.beginPath();
+   myContext.lineWidth = 5;
+   myContext.strokeStyle = 'green';
+   myContext.arc(800, 300, 40, 2, 3 * Math.PI);
+   myContext.stroke();
+    myContext.beginPath();
+   myContext.lineWidth = 5;
+   myContext.strokeStyle = 'green';
+   myContext.arc(800, 270, 40, 2, 3 * Math.PI);
+   myContext.stroke();
+   
+      myContext.beginPath();
+   myContext.lineWidth = 5;
+   myContext.strokeStyle = 'green';
+   myContext.arc(820, 250, 40, 2, 3 * Math.PI);
+   myContext.stroke();
+    myContext.beginPath();
+   myContext.lineWidth = 5;
+   myContext.strokeStyle = 'green';
+   myContext.arc(840, 270, 40, 2, 3 * Math.PI);
+   myContext.stroke();
+   
+    myContext.beginPath();
+   myContext.lineWidth = 5;
+   myContext.strokeStyle = 'green';
+   myContext.arc(840, 300, 40, 2, 3 * Math.PI);
+   myContext.stroke();
+   
+
+}">
+ 
 <br><br>
 
 <input type=button value="clearRect(20, 20, 50, 50)" onclick="{
@@ -109,4 +155,3 @@ You use loops and variables to make fast fancy drawings <br><br>
    let myCanvas=document.getElementById('myCoolTag');
    let myContext=myCanvas.getContext('2d');
 </script>
-
