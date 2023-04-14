@@ -1,33 +1,40 @@
 
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>t2a10-translate-name</title>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,fr,de,ru',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
 
+      function speakWithVoice(myVoice) {
+        responsiveVoice.speak(document.getElementById('google_translate_element').innerText, myVoice, {
+          pitch: 1,
+          rate: 1,
+          volume: 1
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1 align="center">t2a10-translate-name</h1>
 
+    <div id="google_translate_element">I really like javascript</div>
 
-<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <input type="button" value="Initialize speak with female voice" onclick="speakWithVoice('Russian Female')"><br><br>
 
-<script>
-    function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr,de,ru', layout:google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+    <div id="google_translate_element02">this is a male voice</div>
 
-    }
-</script>
-
-
-
-<h1 align=center>t2a10-translate-name</h1>
-
-<div id="google_translate_element">I really like javascript</div>
-
-
-<input  type="button" value="initilize speak" onclick="{  
-   let myVoice = 'Russian Female'
-   responsiveVoice.speak(document.getElementById('google_translate_element').innerText, myVoice, {pitch: 1, rate: 1, volume : 1})                                              
-}"><br><br>
-
-<div id="google_translate_element02">this is a male voice</div>
-
-<input  type="button" value="initilize speak" onclick="{  
-   let myVoice = 'Russian male'
-   responsiveVoice.speak(document.getElementById('google_translate_element').innerText, myVoice, {pitch: 2, rate: 2, volume : 1})                                              
-}"><br><br>
+    <input type="button" value="Initialize speak with male voice" onclick="speakWithVoice('Russian male')"><br><br>
+  </body>
+</html>
