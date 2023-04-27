@@ -102,7 +102,7 @@ function myCheckHit(){
 }"><br><br>
 
 <input type=button value="Move Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 10 + 'px'
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -10 + 'px'
   myCheckHit()     // checks for all collisions
 }" >
 
