@@ -82,9 +82,6 @@ function myCheckHit(){
 }">
 
 
-
-
-
 <input type=button value="Auto Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   clearInterval(myTimer01)
   clearInterval(myTimer02)
@@ -104,6 +101,10 @@ function myCheckHit(){
   }, 50)
 }"><br><br>
 
+<input type=button value="Move Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 10 + 'px'
+  myCheckHit()     // checks for all collisions
+}" >
 
 <img id="myImg01" src="myImgNew.jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
-<img id="myImg02" src="myImgNew.jpg" title="myImg02" style="position:absolute; width:100px;  height:80px; left:50px; top:390px;">
+<img id="myImg02" src="myImgNew.jpg" title="myImg02" style="position:absolute; width:100px;  height:80px; left: 100px; top:600px;">
