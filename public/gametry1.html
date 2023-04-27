@@ -92,13 +92,20 @@ function myCheckHit(){
 }"><br><br>
   
   
-<input type=button value="Auto Down" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<script>
+function hideButton() {
+  document.getElementById("myButton").style.display = "none";
+}
+</script>
+<input id="myButton" type=button value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+hideButton()   
   clearInterval(myTimer01)
   clearInterval(myTimer02)
   myTimer02 = setInterval(function(){
      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + myVeritcalSpeed + 'px'
      myCheckHit()     // checks for all collisions
   }, 50)
+                                                                                                  
 }"><br><br>
 
 <input type=button value="Move Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
