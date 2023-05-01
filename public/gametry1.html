@@ -98,11 +98,11 @@ function hideButton() {
 }
 </script>
 <input id="myButton" type=button value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-hideButton()   
+ hideButton()   
+
   clearInterval(myTimer01)
-  clearInterval(myTimer02)
-  myTimer02 = setInterval(function(){
-     document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg02').style.top) + myVeritcalSpeed + 'px'
+  myTimer01 = setInterval(function(){
+     document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
      myCheckHit()     // checks for all collisions
   }, 50)
                                                                                                   
