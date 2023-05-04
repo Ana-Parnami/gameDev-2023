@@ -1,0 +1,8 @@
+<input type=button value="Auto Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  clearInterval(myTimer01)
+  clearInterval(myTimer02)
+  myTimer01 = setInterval(function(){
+     document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + myHorizontalSpeed + 'px'
+     myCheckHit()     // checks for all collisions
+  }, 50)
+}"><br><br>
