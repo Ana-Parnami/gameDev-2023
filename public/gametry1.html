@@ -34,16 +34,17 @@ function myHitOther(my1,my2){
        return true
    }
 }
-function myCheckHit() {
+  function myCheckHit() {
   // YOU WIN and go to next level!
   if (myHitOther('myImg01', 'myImg02')) {
     alert('You Win, now go to the next level')
-    document.getElementById('myImg01').style.left = '20px'
+    const randomLeft = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
+    document.getElementById('myImg01').style.left =  randomLeft + 'px'
     document.getElementById('myImg01').style.top = '190px'
   } 
   else if (myHitOther('myImg01', 'myImg03')) {
     alert('Gamelost')
-    document.getElementById('myImg01').style.top = '190px'
+    document.getElementById('myImg01').style.top = '190px' 
     location = 'https://www.google.ca'
   }
   else {
@@ -68,6 +69,7 @@ function myCheckHit() {
     }
   }
 }
+
 
 
 
