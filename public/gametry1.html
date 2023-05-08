@@ -1,7 +1,9 @@
 
 
   <h6> Version 0.1.1-5</h6>
-<body id="myBody"  style="background-size: 80%" background="myBackground01.jpg">
+<body id="myBody"  style="background-size: 80%" background="myBackground01.jpg"
+>
+
 
 
 
@@ -111,11 +113,12 @@ function hideButton() {
 }"><br><br>
 
 <input type=button value="Move left" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -10 + 'px'
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px'
   myCheckHit()     // checks for all collisions
 }" >
 
-<img id="myImg01" src="myImgNew2jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
-<img id="myImg02" src="myImgNew3jpg" title="myImg02" style="position:absolute; width:50px;  height:80px; left: 170px; top:600px;">
+<img id="myImg01" src="myImgNew2jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;" >
+<img id="myImg02" src="myImgNew3jpg" title="myImg02" style="position:absolute; width:50px;  height:80px; left: 170px; top:600px;" >
+
 
 <img id="myImg03"src="myImgNew3jpg" title="myImg02" style="position:absolute; width:6000px;  height:80px; left: 00px; top:1000px;">
