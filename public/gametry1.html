@@ -37,7 +37,7 @@ function myHitOther(my1,my2){
   function myCheckHit() {
   // YOU WIN and go to next level!
   if (myHitOther('myImg01', 'myImg02')) {
-    alert('You Win, now go to the next level')
+
     const randomLeft = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
     document.getElementById('myImg01').style.left =  randomLeft + 'px'
     document.getElementById('myImg01').style.top = '190px'
