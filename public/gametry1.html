@@ -40,7 +40,7 @@ function myHitOther(my1,my2){
   // YOU WIN and go to next level!
   if (myHitOther('myImg01', 'myImg02')) {
 
-    const randomLeft = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
+    const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
     document.getElementById('myImg01').style.left =  randomLeft + 'px'
     document.getElementById('myImg01').style.top = '190px'
   } 
@@ -114,7 +114,11 @@ function hideButton() {
 
 <input type=button value="Move left" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px'
-  myCheckHit()     // checks for all collisions
+  myCheckHit()    
+}" >
+  <input type=button value="Move right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px'
+  myCheckHit()    
 }" >
 
 <img id="myImg01" src="myImgNew2jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;" >
