@@ -100,16 +100,15 @@ function myHitOther(my1,my2){
   }, 100)
 }" />
 
-<input type=button value="Auto Background Down" onclick="{
-  clearInterval(myClock)
-  let myTemp = '0px ' + myGlobalX + 'px'
+<input type="button" value="Auto Background Up" onclick="{
+  clearInterval(myClock);
+  let myTemp = '0px 100px';
   myClock = setInterval(function(){
-      myGlobalX -= 5
-      myTemp = '0px ' + myGlobalX + 'px'
-      document.getElementById('myBody').style.backgroundPosition = myTemp
-  }, 100)
-}" />
-
+      myGlobalY -= 5;
+      myTemp = '0px ' + myGlobalY + 'px';
+      document.getElementById('myBody').style.backgroundPosition = myTemp;
+  }, 100); 
+}">
   
   
 <script>
