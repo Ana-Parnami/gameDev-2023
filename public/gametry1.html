@@ -80,35 +80,7 @@ function myHitOther(my1,my2){
 
 
 
-<input type=button value="Auto Background Left" onclick="{
-  clearInterval(myClock)
-  let myTemp = '100px 0px'
-  myClock = setInterval(function(){
-      myGlobalX -= 5
-      myTemp =  myGlobalX + 'px 0px'
-      document.getElementById('myBody').style.backgroundPosition = myTemp
-  }, 100)
-    
-}">
-  <input type=button value="Auto Background Down" onclick="{
-  clearInterval(myClock)
-  let myTemp = '0px ' + myGlobalX + 'px'
-  myClock = setInterval(function(){
-      myGlobalX -= 5
-      myTemp = '0px ' + myGlobalX + 'px'
-      document.getElementById('myBody').style.backgroundPosition = myTemp
-  }, 100)
-}" />
 
-<input type="button" value="Auto Background Up" onclick="{
-  clearInterval(myClock);
-  let myTemp = '0px 100px';
-  myClock = setInterval(function(){
-      myGlobalY -= 5;
-      myTemp = '0px ' + myGlobalY + 'px';
-      document.getElementById('myBody').style.backgroundPosition = myTemp;
-  }, 100); 
-}">
   
   
 <script>
@@ -118,7 +90,7 @@ function hideButton() {
 </script>
 
 
-<input id="myStartButton" type=button value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input id="myStartButton" type=button value="start"  alingonTouchStart="{this.click(); event.preventDefault();}" onclick="{
  hideButton()   
   clearInterval(myTimer01)
   myTimer01 = setInterval(function(){
