@@ -86,16 +86,16 @@ function hideButton() {
 }
 </script>
 
-
-<input id="myStartButton" type=button value="start"  alingonTouchStart="{this.click(); event.preventDefault();}" onclick="{
- hideButton()   
-  clearInterval(myTimer01)
-  myTimer01 = setInterval(function(){
-     document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
-     myCheckHit()     // checks for all collisions
-  }, 50)
-                                                                                                  
-}"><br><br>
+<<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <input id="myStartButton" type="button" value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+    hideButton();   
+    clearInterval(myTimer01);
+    myTimer01 = setInterval(function(){
+      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
+      myCheckHit();     // checks for all collisions
+    }, 50);
+  }">
+</div>
 
 <input type=button value="Move left" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px'
