@@ -37,7 +37,7 @@ function myHitOther(my1,my2){
   // YOU WIN and go to next level!
   if (myHitOther('myImg01', 'myImg02')) {
 
-    const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
+    const randomLeft = Math.floor(Math.random() * (600 - 20 + 1)) + 20;
     document.getElementById('myImg01').style.left =  randomLeft + 'px'
     document.getElementById('myImg01').style.top = '190px'
   } 
@@ -84,11 +84,16 @@ function myHitOther(my1,my2){
 function hideButton() {
   document.getElementById("myStartButton").style.display = "none";
 }
+  function showMoveButtons() {
+  document.getElementById('moveLeftButton').style.display = 'inline-block';
+  document.getElementById('moveRightButton').style.display = 'inline-block';
+}
 </script>
 
 <div style="display: flex; justify-content: center; ">
   <input id="myStartButton" type="button" value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
     hideButton();   
+    function showMoveButtons() 
     clearInterval(myTimer01);
     myTimer01 = setInterval(function(){
       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
