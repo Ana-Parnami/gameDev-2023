@@ -89,26 +89,26 @@ function hideButton() {
   document.getElementById('moveRightButton').style.display = 'inline-block';
 }
 </script>
-
 <div style="display: flex; justify-content: center; ">
   <input id="myStartButton" type="button" value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-    hideButton();   
-    function showMoveButtons() 
+    hideButton();
+    showMoveButtons(); // Call the function to show the move buttons
     clearInterval(myTimer01);
     myTimer01 = setInterval(function(){
       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
-      myCheckHit();     // checks for all collisions
+      myCheckHit();
     }, 50);
   }">
 </div>
 
-<input type=button value="Move left" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px'
-  myCheckHit()    
+<input type="button" id="moveLeftButton" value="Move left" style="display: none;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 20 + 'px';
+  myCheckHit();
 }" >
-  <input type=button value="Move right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px'
-  myCheckHit()    
+
+<input type="button" id="moveRightButton" value="Move right" style="display: none;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px';
+  myCheckHit();
 }" >
 
 <img id="myImg01" src="myImage01.jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;" >
