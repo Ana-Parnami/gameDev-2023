@@ -33,18 +33,19 @@ function myHitOther(my1,my2){
        return true
    }
 }
-  function myCheckHit() {
-  // YOU WIN and go to next level!
-  if (myHitOther('myImg01', 'myImg02')) {
-
-  let lastRandomLeft = 0; // Initialize the variable to store the last random number
-
-function getRandomNumber() {
+  function getRandomNumber() {
   const min = Math.max(lastRandomLeft - 30, 20); // Calculate the minimum value, considering the +/- 30 constraint and the lower bound of 20
   const max = Math.min(lastRandomLeft + 30, 600); // Calculate the maximum value, considering the +/- 30 constraint and the upper bound of 600
   const randomLeft = Math.floor(Math.random() * (max - min + 1)) + min; // Generate a random number within the constrained range
   lastRandomLeft = randomLeft; // Update the last random number with the current random number
   return randomLeft; // Return the random number
+
+}
+  function myCheckHit() {
+  // YOU WIN and go to next level!
+  if (myHitOther('myImg01', 'myImg02')) {
+
+  let lastRandomLeft = 0; // Initialize the variable to store the last random number
 
 
 document.getElementById('myImg01').style.left = getRandomNumber() + 'px';
