@@ -1,0 +1,51 @@
+<h2>t2a09-local-storage-name by Ana</h2>
+
+<body onload="{
+   myStorageText = localStorage.getItem('myStoredText')
+   if(myStorageText != null){
+      document.getElementById('myText1').value = myStorageText 
+    }
+   myStorageNumber = localStorage.getItem('myStoredNumber')
+   if(myStorageNumber != null){
+      document.getElementById('myText2').value = myStorageNumber 
+    }
+}">
+
+<body onunload="{
+   localStorage.setItem('myStoredText', document.getElementById('myText1').value)
+   let myNumber = parseInt(document.getElementById('myText2').value);
+   if (!isNaN(myNumber)) {
+      localStorage.setItem('myStoredNumber', myNumber);
+   }
+}">
+  
+Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store text"><br>
+
+<input type="button" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', document.getElementById('myText1').value)
+   alert(document.getElementById('myText1').value + ' \nHas been stored')
+   document.getElementById('myText1').value = ''
+}">
+
+<input type="button" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+<br><br><br>
+
+Number example: <input id="myText2" type=number size=70 value="" placeholder="Write here to store number"><br>
+
+<input type="button" value="Store number" onClick="{
+   let myNumber = parseInt(document.getElementById('myText2').value);
+   if (!isNaN(myNumber)) {
+      localStorage.setItem('myStoredNumber', myNumber);
+      alert(myNumber + ' \nHas been stored')
+      document.getElementById('myText2').value = ''
+   } else {
+      alert('Please enter a valid number.')
+   }
+}">
+
+<input type="button" value="Retrieve number" onClick="{
+   document.getElementById('myText2').value = localStorage.getItem('myStoredNumber')
+}"> 
