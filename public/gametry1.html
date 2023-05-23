@@ -1,8 +1,5 @@
-
-
-  <h6> Version 0.1.1-3</h6>
-<body id="myBody"  style="background-size: 80%" background="myBackground01.jpg"
->
+<h6> Version 0.1.1-5</h6>
+<body id="myBody"  style="background-size: 80%" background="myBackground01.jpg">
 
 
 
@@ -33,28 +30,18 @@ function myHitOther(my1,my2){
        return true
    }
 }
-  function getRandomNumber() {
-  const min = Math.max(lastRandomLeft - 30, 20); // Calculate the minimum value, considering the +/- 30 constraint and the lower bound of 20
-  const max = Math.min(lastRandomLeft + 30, 600); // Calculate the maximum value, considering the +/- 30 constraint and the upper bound of 600
-  const randomLeft = Math.floor(Math.random() * (max - min + 1)) + min; // Generate a random number within the constrained range
-  lastRandomLeft = randomLeft; // Update the last random number with the current random number
-  return randomLeft; // Return the random number
-
-}
   function myCheckHit() {
   // YOU WIN and go to next level!
   if (myHitOther('myImg01', 'myImg02')) {
 
-  let lastRandomLeft = 0; // Initialize the variable to store the last random number
-
-
-document.getElementById('myImg01').style.left = getRandomNumber() + 'px';
-document.getElementById('myImg01').style.top = '190px';
+    const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
+    document.getElementById('myImg01').style.left =  randomLeft + 'px'
+    document.getElementById('myImg01').style.top = '190px'
   } 
   else if (myHitOther('myImg01', 'myImg03')) {
     alert('Gamelost')
     document.getElementById('myImg01').style.top = '190px' 
-   window.location.href = 'indexgame.html'
+    location = 'https://www.google.ca'
   }
   else {
     // update position based on speed
@@ -94,31 +81,26 @@ document.getElementById('myImg01').style.top = '190px';
 function hideButton() {
   document.getElementById("myStartButton").style.display = "none";
 }
-  function showMoveButtons() {
-  document.getElementById('moveLeftButton').style.display = 'inline-block';
-  document.getElementById('moveRightButton').style.display = 'inline-block';
-}
 </script>
+
 <div style="display: flex; justify-content: center; ">
   <input id="myStartButton" type="button" value="start" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-    hideButton();
-    showMoveButtons(); // Call the function to show the move buttons
+    hideButton();   
     clearInterval(myTimer01);
     myTimer01 = setInterval(function(){
       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
-      myCheckHit();
+      myCheckHit();     // checks for all collisions
     }, 50);
   }">
 </div>
 
-<input type="button" id="moveLeftButton" value="Move left" style="display: none;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 20 + 'px';
-  myCheckHit();
+<input type=button value="Move left" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px'
+  myCheckHit()    
 }" >
-
-<input type="button" id="moveRightButton" value="Move right" style="display: none;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px';
-  myCheckHit();
+  <input type=button value="Move right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px'
+  myCheckHit()    
 }" >
 
 <img id="myImg01" src="myImage01.jpg" title="myImg01" style="position:absolute; width:100px; height:80px; left: 50px; top:190px;" >
