@@ -1,1 +1,254 @@
-hi
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game level 2</title>
+</head>
+<body id="myBody" style="background-size: 80%" background="myBackground01.jpg">
+
+<p id="myScore3">Score: 0</p>
+
+<script>
+  // global variables here
+  let myGlobalX = 0;
+  let myClock;
+  let myTimer01;
+  let myTimer02;
+  let myHorizontalSpeed = 10;
+  let myVerticalSpeed = 5;
+  let myScore3 = 0;
+  let highScore3 = 0; 
+  
+  const storedHighScore3 = localStorage.getItem('highScore3');
+  if (storedHighScore3 !== null) {
+    highScore3 = parseInt(storedHighScore3);
+  }
+
+  function updateHighScore() {
+    document.getElementById("highScore3").innerText = "High Score: " + highScore3;
+  }
+
+
+  updateHighScore();
+
+
+  function resetScore() {
+    myScore3 = 0;
+    localStorage.setItem('myScore3', myScore3);
+    updateScore();
+    if (myScore3 > highScore3) {
+      highScore3 = myScore3;
+      localStorage.setItem('highScore3', highScore3);
+      updateHighScore();
+    }
+  }
+
+  // Function to update the score in the HTML
+  function updateScore() {
+    document.getElementById("myScore3").innerText = "Score: " + myScore3;
+  }
+
+  // Retrieve the score from local storage if available
+  const storedScore = localStorage.getItem('myScore3');
+  if (storedScore !== null) {
+    myScore3 = parseInt(storedScore);
+    updateScore();
+  }
+
+  function myHitOther(my1, my2) {
+    left1 = parseInt(document.getElementById(my1).style.left);
+    right1 = left1 + parseInt(document.getElementById(my1).style.width);
+    top1 = parseInt(document.getElementById(my1).style.top);
+    bottom1 = top1 + parseInt(document.getElementById(my1).style.height);
+    left2 = parseInt(document.getElementById(my2).style.left);
+    right2 = left2 + parseInt(document.getElementById(my2).style.width);
+    top2 = parseInt(document.getElementById(my2).style.top);
+    bottom2 = top2 + parseInt(document.getElementById(my2).style.height);
+    if (
+      right1 >= left2 &&
+      bottom1 >= top2 &&
+      left1 <= right2 &&
+      top1 <= bottom2
+    ) {
+      return true;
+    }
+  }
+  function myHitOther(my1, my2) {
+    left1 = parseInt(document.getElementById(my1).style.left);
+    right1 = left1 + parseInt(document.getElementById(my1).style.width);
+    top1 = parseInt(document.getElementById(my1).style.top);
+    bottom1 = top1 + parseInt(document.getElementById(my1).style.height);
+    left2 = parseInt(document.getElementById(my2).style.left);
+    right2 = left2 + parseInt(document.getElementById(my2).style.width);
+    top2 = parseInt(document.getElementById(my2).style.top);
+    bottom2 = top2 + parseInt(document.getElementById(my2).style.height);
+    if (
+      right1 >= left2 &&
+      bottom1 >= top2 &&
+      left1 <= right2 &&
+      top1 <= bottom2
+    ) {
+      return true;
+    }
+  }
+
+  function myCheckHit() {
+    // YOU WIN and go to next level!
+    if (myHitOther("myImg01", "myImg02")) {
+      const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
+      document.getElementById("myImg01").style.left = randomLeft + "px";
+      document.getElementById("myImg01").style.top = "190px";
+      myScore3++; // Increment the score
+      localStorage.setItem('myScore3', myScore3); 
+      updateScore(); 
+
+      if (myScore3 > highScore3) {
+        highScore3 = myScore3;
+        localStorage.setItem('highScore3', highScore3);
+        updateHighScore(); // Update high score in the HTML
+      }
+      
+      
+    } 
+    
+     else if (myHitOther("myImg12", "myImg02")) {
+      alert("Game lost: high score" + highScore3);
+      document.getElementById("myImg01").style.top = "190px";
+      resetScore(); // Reset the score and update the high score
+      window.location.href = "indexgame.html";
+    } 
+    
+    
+    
+    else if (myHitOther("myImg01", "myImg03")) {
+      alert("Game lost: high score" + highScore3);
+      document.getElementById("myImg01").style.top = "190px";
+      resetScore(); // Reset the score and update the high score
+      window.location.href = "indexgame.html";
+    } 
+    
+       else if (myHitOther("myImg12", "myImg03")) {
+      const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
+      document.getElementById("myImg12").style.left = randomLeft + "px";
+      document.getElementById("myImg12").style.top = "190px";
+      myScore3++; // Increment the score
+      localStorage.setItem('myScore3', myScore3); 
+      updateScore(); 
+
+      if (myScore3 > highScore3) {
+        highScore3 = myScore3;
+        localStorage.setItem('highScore3', highScore3);
+        updateHighScore(); // Update high score in the HTML
+      }
+    } 
+    
+    
+    else {
+    
+      document.getElementById("myImg01").style.top =
+        parseInt(document.getElementById("myImg01").style.top) +
+        myVerticalSpeed +
+        "px";
+          document.getElementById("myImg12").style.top =
+        parseInt(document.getElementById("myImg12").style.top) +
+        myVerticalSpeed +
+        "px";
+
+
+      // checking for window boundaries
+      // far left bounce
+      if (
+        parseInt(document.getElementById("myImg01").style.left) >
+        window.innerWidth - document.getElementById("myImg01").width
+      ) {
+        myHorizontalSpeed *= -1;
+      }
+
+      // far right bounce
+      if (
+        parseInt(document.getElementById("myImg01").style.left) < -10
+      ) {
+        myHorizontalSpeed = myHorizontalSpeed * -1;
+      }
+
+      // top bounce
+      if (
+        parseInt(document.getElementById("myImg01").style.top) < -50
+      ) {
+        document.getElementById("myImg01").style.top = "190px";
+      }
+    }
+  }
+</script>
+
+<script>
+  function hideButton() {
+    document.getElementById("myStartButton").style.display = "none";
+  }
+</script>
+
+<div style="display: flex; justify-content: center; ">
+  <input
+    id="myStartButton"
+    type="button"
+    value="start"
+    onTouchStart="{this.click(); event.preventDefault();}"
+    onclick="{
+    hideButton();
+    clearInterval(myTimer01);
+    myTimer01 = setInterval(function(){
+      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
+      myCheckHit();     // checks for all collisions
+    }, 50);
+  }"
+  >
+</div>
+
+<input
+  type="button"
+  value="Move left"
+  onTouchStart="{this.click(); event.preventDefault();}"
+  onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px';
+  myCheckHit();
+}"
+>
+<input
+  type="button"
+  value="Move right"
+  onTouchStart="{this.click(); event.preventDefault();}"
+  onclick="{
+  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px';
+  myCheckHit();
+}"
+>
+
+<img
+  id="myImg01"
+  src="myImage01.jpg"
+  title="myImg01"
+  style="position: absolute; width: 100px; height: 80px; left: 50px; top: 190px;"
+>
+<img
+  id="myImg12"
+  src="myImage01.jpg"
+  title="myImg01"
+  style="position: absolute; width: 100px; height: 80px; left: 200px; top: 190px;"
+>
+<img
+  id="myImg02"
+  src="myImgNew3.jpg"
+  title="myImg02"
+  style="position: absolute; width: 50px; height: 80px; left: 170px; top: 600px;" >
+<img
+  id="myImg03"
+  src="myImage01.jpg"
+  title="myImg02"
+  style="position: absolute; width: 6000px; height: 80px; left: 0px; top: 1000px;" >
+
+<script>
+  setInterval(updateScore, 1000);
+</script>
+
+</body>
+</html>
+
