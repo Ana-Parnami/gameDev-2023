@@ -8,7 +8,7 @@
 </head>
 <body id="myBody" style="background-size: 80%" background="myBackground01.jpg">
 <audio id="hitSound" src="tile-hit.mp3"></audio>
-  <audio id="endSound" src="tile-hit.mp3"></audio>
+  <audio id="wrongSound" src="wrong.mp3"></audio>
 
 <p id="myScore">Score: 0</p>
 
@@ -85,6 +85,11 @@
     hitSound.currentTime = 0;
     hitSound.play();
   }
+   function playwrongSound() {
+    const hitSound = document.getElementById("wrongSound");
+    hitSound.currentTime = 0;
+    hitSound.play();
+  }
   function myCheckHit() {
     // YOU WIN and go to next level!
     if (myHitOther("myImg01", "myImg02")) {
@@ -103,11 +108,13 @@
       }
       
     } else if (myHitOther("myImg01", "myImg03")) {
+      playwrongSound()
       alert("Game lost: high score"+ highScore );
       document.getElementById("myImg01").style.top = "190px";
       resetScore(); // Reset the score and update the high score
       window.location.href = "indexgame.html";
-    } else {
+    }
+    else {
       // update position based on speed
       document.getElementById("myImg01").style.top =
         parseInt(document.getElementById("myImg01").style.top) +
