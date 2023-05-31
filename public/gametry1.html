@@ -4,6 +4,8 @@
   <title>My Game leval 1</title>
 </head>
 <body id="myBody" style="background-size: 80%" background="myBackground01.jpg">
+  <audio id="hitSound" src="tile-hit.mp3"></audio>
+  <audio id="wrongSound" src="wrong.mp3"></audio>
 
 
 <p id="myScore">Score: 0</p>
@@ -75,6 +77,17 @@
       return true;
     }
   }
+  
+   function playHitSound() {
+    const hitSound = document.getElementById("hitSound");
+    hitSound.currentTime = 0;
+    hitSound.play();
+  }
+   function playwrongSound() {
+    const hitSound = document.getElementById("wrongSound");
+    hitSound.currentTime = 0;
+    hitSound.play();
+  }
 
   function myCheckHit() {
     // YOU WIN and go to next level!
@@ -85,6 +98,7 @@
       myScore++; // Increment the score
       localStorage.setItem('myScore', myScore); 
       updateScore(); 
+       playHitSound(); 
 
       if (myScore > highScore) {
         highScore = myScore;
@@ -92,7 +106,9 @@
         updateHighScore(); // Update high score in the HTML
       }
       
-    } else if (myHitOther("myImg01", "myImg03")) {
+    } 
+    else if (myHitOther("myImg01", "myImg03")) {
+       playwrongSound()
       alert("Game lost: high score"+ highScore );
       document.getElementById("myImg01").style.top = "190px";
       resetScore(); // Reset the score and update the high score
