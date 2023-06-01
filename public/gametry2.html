@@ -4,6 +4,10 @@
     <title>My Game level 2</title>
 </head>
 <body id="myBody" style="background-size: 80%" background="myBackground01.jpg">
+     <audio src="ytmp3free.cc_kahoot-full-original-soundtrack-as-of-2018-youtubemp3free.org.mp3" autoplay loop volume="0.7"></audio>
+  <audio id="hitSound" src="tile-hit.mp3"></audio>
+  <audio id="wrongSound" src="wrong.mp3"></audio>
+
 
 <p id="myScore2">Score: 0</p>
 
@@ -90,6 +94,16 @@
       return true;
     }
   }
+  function playHitSound() {
+    const hitSound = document.getElementById("hitSound");
+    hitSound.currentTime = 0;
+    hitSound.play();
+  }
+   function playwrongSound() {
+    const hitSound = document.getElementById("wrongSound");
+    hitSound.currentTime = 0;
+    hitSound.play();
+  }
 
   function myCheckHit() {
     // YOU WIN and go to next level!
@@ -100,6 +114,7 @@
       myScore2++; // Increment the score
       localStorage.setItem('myScore2', myScore2); 
       updateScore(); 
+        playHitSound();
 
       if (myScore2 > highScore2) {
         highScore2 = myScore2;
@@ -117,6 +132,7 @@
       myScore2++; // Increment the score
       localStorage.setItem('myScore2', myScore2); 
       updateScore(); 
+          playHitSound();
 
       if (myScore2 > highScore2) {
         highScore2 = myScore2;
@@ -128,6 +144,7 @@
     
     
     else if (myHitOther("myImg01", "myImg03")) {
+        playwrongSound()
       alert("Game lost: high score" + highScore2);
       document.getElementById("myImg01").style.top = "190px";
       resetScore(); // Reset the score and update the high score
@@ -135,8 +152,8 @@
     } 
     
        else if (myHitOther("myImg11", "myImg03")) {
-      alert("Game lost: high score" + highScore2);
-     
+           playwrongSound()
+      alert("Game lost: high score" + highScore2)
       resetScore(); // Reset the score and update the high score
       window.location.href = "indexgame.html";
     } 
