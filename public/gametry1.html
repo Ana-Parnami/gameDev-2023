@@ -91,7 +91,12 @@
   }
 
   function myCheckHit() {
-    // YOU WIN and go to next level!
+     if (myScore > 5) {
+    alert("Game over! You win!");
+ window.location.href = "index.html";
+ return;
+    
+  }
     if (myHitOther("myImg01", "myImg02")) {
       const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
       document.getElementById("myImg01").style.left = randomLeft + "px";
