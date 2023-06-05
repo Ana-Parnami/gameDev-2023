@@ -104,17 +104,19 @@
     } 
     else if (myHitOther("myImg12", "myImg02")) {
       alert("Game lost: high score" + highScore3);
+         playwrongSound()
        document.getElementById("myImg12").style.top = "1000px";
       resetScore(); // Reset the score and update the high score
       window.location.href = "indexgame.html";
-      playwrongSound()
+     
     } 
     else if (myHitOther("myImg01", "myImg03")) {
       alert("Game lost: high score" + highScore3);
+         playwrongSound()
       document.getElementById("myImg01").style.top = "190px";
       resetScore(); // Reset the score and update the high score
       window.location.href = "indexgame.html";
-        playwrongSound()
+        
     } 
     else if (myHitOther("myImg12", "myImg03")) {
       const randomLeft = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
