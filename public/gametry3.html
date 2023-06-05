@@ -156,43 +156,45 @@
 
   setInterval(updateScore, 1000);
 </script>
-
-<div style="display: flex; justify-content: center; ">
+<div style="display: flex; justify-content: center;">
   <input
     id="myStartButton"
     type="button"
     value="start"
+    style="width: 150px; height: 50px; font-size: 20px;"
     onTouchStart="{this.click(); event.preventDefault();}"
     onclick="{
-    hideButton();
-    clearInterval(myTimer01);
-    myTimer01 = setInterval(function(){
-      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
-      myCheckHit();     // checks for all collisions
-    }, 50);
-  }"
+      hideButton();
+      clearInterval(myTimer01);
+      myTimer01 = setInterval(function(){
+        document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
+        myCheckHit();     // checks for all collisions
+      }, 50);
+    }"
   >
 </div>
 
 <input
   type="button"
   value="Move left"
+  style="width: 150px; height: 50px; font-size: 16px;"
   onTouchStart="{this.click(); event.preventDefault();}"
   onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px';
-  myCheckHit();
-}"
+    document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + -20 + 'px';
+    myCheckHit();
+  }"
 >
+
 <input
   type="button"
   value="Move right"
+  style="width: 150px; height: 50px; font-size: 16px;"
   onTouchStart="{this.click(); event.preventDefault();}"
   onclick="{
-  document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px';
-  myCheckHit();
-}"
+    document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 20 + 'px';
+    myCheckHit();
+  }"
 >
-
 <img
   id="myImg01"
   src="myImage01.jpg"
