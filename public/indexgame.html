@@ -23,6 +23,17 @@
     margin: 0 auto;
 }
     </style>
+      <script>
+const storedHighScore2 = localStorage.getItem('highScore2');
+  if (storedHighScore2 !== null) {
+    const highScore2 = parseInt(storedHighScore2);
+    const highScoreElement = document.createElement('p');
+    highScoreElement.innerText = 'High Score: ' + highScore2;
+
+    const level2Link = document.querySelector('a[href="gametry2.html"]');
+    level2Link.insertAdjacentElement('afterend', highScoreElement);
+  }
+    </script>
        <audio src="scary-piano.mp3" autoplay loop volume="0.7"></audio>
 
   <h1>Piano Tiles</h1>
