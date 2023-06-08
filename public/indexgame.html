@@ -56,5 +56,16 @@
       const level2Link = document.querySelector('a[href="gametry2.html"] .high-score');
       level2Link.appendChild(highScoreElement);
     }
+
+    const storedHighScore3 = localStorage.getItem('highScore3');
+    if (storedHighScore3 !== null) {
+      const highScore3 = parseInt(storedHighScore3);
+      const highScoreElement3 = document.createElement('span');
+      highScoreElement3.classList.add('high-score');
+      highScoreElement3.innerText = 'High Score: ' + highScore3;
+
+      const level3Link = document.querySelector('a[href="gametry3.html"]');
+      level3Link.appendChild(highScoreElement3);
+    }
   </script>
 </body>
