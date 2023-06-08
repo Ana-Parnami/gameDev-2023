@@ -1,47 +1,55 @@
 <body>
-      <style>
+  <style>
     h1 {
-   font-family: 'Open Sans', sans-serif;
-   border: 2px solid #cfc;
-   font-size: 24px;
-   color: white;
-   text-align: center;
-   text-transform: uppercase;
-   padding: 10px;
-}
-   body{
-         background-image: url("nebulosa-loowop-nebula.gif");
+      font-family: 'Open Sans', sans-serif;
+      border: 2px solid #cfc;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px;
+    }
+
+    body {
+      background-image: url("nebulosa-loowop-nebula.gif");
       background-repeat: no-repeat;
       background-size: cover;
-         
-        }
-           a {
-    color: #cfc;
-    font-size: 20px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-}
-    </style>
-      <script>
-const storedHighScore2 = localStorage.getItem('highScore2');
-  if (storedHighScore2 !== null) {
-    const highScore2 = parseInt(storedHighScore2);
-    const highScoreElement = document.createElement('p');
-    highScoreElement.innerText = 'High Score: ' + highScore2;
+    }
 
-    const level2Link = document.querySelector('a[href="gametry2.html"]');
-    level2Link.insertAdjacentElement('afterend', highScoreElement);
-  }
-    </script>
-       <audio src="scary-piano.mp3" autoplay loop volume="0.7"></audio>
+    a {
+      color: #cfc;
+      font-size: 20px;
+      text-align: center;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    .high-score {
+      color: green;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  </style>
+
+  <audio src="scary-piano.mp3" autoplay loop volume="0.7"></audio>
 
   <h1>Piano Tiles</h1>
-        <a href="gametry1.html"> Level 1: Try to get more than 20 points </a> 
-        <a href="gametry2.html"> Level 2: beat high score </a> + highScore3
-       <a href="gametry3.html"> Level 3: beat highscore</a> 
-      <br>
-           <br><br><br><br>
-     
-     
+  <a href="gametry1.html"> Level 1: Try to get more than 20 points </a>
+  <a href="gametry2.html"> Level 2: beat high score <span class="high-score"></span></a> <br>
+  <a href="gametry3.html"> Level 3: beat high score</a>
+
+  <br><br><br><br>
+
+  <script>
+    const storedHighScore2 = localStorage.getItem('highScore2');
+    if (storedHighScore2 !== null) {
+      const highScore2 = parseInt(storedHighScore2);
+      const highScoreElement = document.createElement('span');
+      highScoreElement.classList.add('high-score');
+      highScoreElement.innerText = 'High Score: ' + highScore2;
+
+      const level2Link = document.querySelector('a[href="gametry2.html"] .high-score');
+      level2Link.appendChild(highScoreElement);
+    }
+  </script>
 </body>
